@@ -1,9 +1,55 @@
-.App {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: white;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     color: black;
+    font-family: Arial, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #a0c1e8, #d4f0c4);
+}
+
+.App {
+    width: 400px;
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.input-area {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.input-area input {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    outline: none;
+}
+
+.input-area button {
+    padding: 8px 15px;
+    background: #2e86de;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background: #1b5fa7;
 }

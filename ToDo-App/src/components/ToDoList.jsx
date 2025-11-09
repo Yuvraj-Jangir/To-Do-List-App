@@ -1,27 +1,23 @@
-import { useState } from 'react';
-import ToDoItem from './ToDoItem';
-import './ToDoList.css';
+import React from "react";
+import ToDoItem from "./ToDoItem";
+import "./ToDoList.css";
 
-function ToDoList({ tasks, onToggle, onDelete, onAdd }) {
-  const [input, setInput] = useState('');
-
-  function handleAdd() {
-    if (input.trim() !== '') {
-      onAdd(input);
-      setInput('');
-    }
-  }
-
+function ToDoList({ tasks, onToggle, onDelete, onEdit }) {
   return (
-    <div className="todo-list">
-      <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Enter task" />
-      <button onClick={handleAdd}>Add</button>
-      <div>
-        {tasks.map((task) => (
-          <ToDoItem key={task.id} task={task} onToggle={onToggle} onDelete={onDelete} />
-        ))}
-      </div>
-    </div>
+    <ul className="todo-list">
+      {tasks.map(function (task) {
+        return (
+          <ToDoItem
+            key={task.id}
+            task={task}
+            onToggle={onToggle}
+            onDelete={onDelete}
+            onEdit={onEdit}
+          />
+        );
+      })}
+    </ul>
   );
 }
+
 export default ToDoList;
